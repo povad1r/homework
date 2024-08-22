@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <img src="{{ url_for('static', filename='uploads/' + post.title) }}" alt="{{ post.title }}">
+
+    <h2>Comments</h2>
+    <div id="comments-block">
+        {% for comment in comments %}
+            <p>{{ comment.content }}</p>
+        {% endfor %}
+    </div>
+
+    <h3>Add a Comment</h3>
+    <textarea id="comment_content" placeholder="Your comment"></textarea>
+    <button id="btn">Add Comment</button>
+    <button id="btn_back">Back</button>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

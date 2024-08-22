@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Add a New Post</h1>
+    <form id="postForm" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" placeholder="Title" required>
+        <label for="content">Content:</label>
+        <input id="content" name="content" type="text" placeholder="Content" required>
+        <label for="image">Image:</label>
+        <input id="image" name="image" type="file" required>
+        <button type="button" id="submitPost">Create Post</button>
+    </form>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
